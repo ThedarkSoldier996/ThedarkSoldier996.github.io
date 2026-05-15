@@ -7,12 +7,36 @@
 
 <body style="background:#000;color:#fff;font-family:Arial;padding:20px">
 
+<!-- CONTENEDOR CENTRADO -->
+<div style="text-align:center;">
+
+  <!-- BOTON DE DESCARGA -->
+  <a 
+    href="https://raw.githubusercontent.com/ThedarkSoldier996/updater/main/app-debug.apk"
+    download
+    style="
+      display:inline-block;
+      margin-bottom:20px;
+      padding:15px 25px;
+      background:#fff;
+      color:#000;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:10px;
+      font-size:18px;
+    "
+  >
+  ⬇ DESCARGA ACTUALIZACIÓN
+  </a>
+
+</div>
+
 <h1>Changelog</h1>
 
 <div id="changelog"></div>
 
 <script>
-fetch("https://raw.githubusercontent.com/ThedarkSoldier996/updater/main/updaterdebug.json")
+fetch("https://raw.githubusercontent.com/ThedarkSoldier996/updater/refs/heads/main/updaterdebug.json")
   .then(response => response.json())
   .then(data => {
 
@@ -25,6 +49,7 @@ fetch("https://raw.githubusercontent.com/ThedarkSoldier996/updater/main/updaterd
       div.style.marginBottom = "10px";
       div.style.padding = "10px";
       div.style.border = "1px solid #444";
+      div.style.borderRadius = "10px";
 
       div.textContent = item;
 
