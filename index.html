@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NovaPlay</title>
+    <!-- ICONO DE LA PÁGINA -->
+    <link rel="icon" type="image/webp" href="https://raw.githubusercontent.com/ThedarkSoldier996/novaimg/main/novasplash.webp">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -32,16 +34,16 @@
         }
 
         .logo-img {
-            max-width: 300px;
+            max-width: 180px; /* Tamaño reducido para dar espacio al texto */
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.4));
         }
 
         .tagline {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
             font-weight: 300;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #eee;
             max-width: 800px;
             margin-left: auto;
@@ -49,22 +51,27 @@
             line-height: 1.4;
         }
 
-        .download-container {
+        .download-flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
             margin-bottom: 30px;
+            padding: 0 10px;
         }
 
         .download-btn {
             display: inline-block;
             background-color: var(--primary-color);
             color: white;
-            padding: 18px 50px;
-            font-size: 1.3rem;
+            padding: 15px 40px;
+            font-size: 1.2rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 40px;
             transition: all 0.3s ease;
             box-shadow: 0 6px 20px rgba(229, 9, 20, 0.4);
-            margin: 10px;
         }
 
         .download-btn:hover {
@@ -74,27 +81,29 @@
         }
 
         .downloader-box {
-            display: inline-block;
+            display: flex;
+            flex-direction: column;
             background-color: #222;
             border: 2px dashed var(--accent-color);
-            padding: 15px 30px;
+            padding: 10px 25px;
             border-radius: 15px;
-            margin: 20px auto;
+            min-width: 200px;
         }
 
         .downloader-title {
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             color: #aaa;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 5px;
+            margin-bottom: 2px;
         }
 
         .downloader-code {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--accent-color);
             font-family: monospace;
+            line-height: 1.2;
         }
 
         .features {
@@ -102,15 +111,15 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 25px;
-            padding: 60px 20px;
+            padding: 40px 20px;
             background-color: #050505;
         }
 
         .feature-card {
             background-color: var(--card-bg);
-            padding: 35px;
+            padding: 30px;
             border-radius: 20px;
-            width: 300px;
+            width: 280px;
             text-align: left;
             border-top: 4px solid transparent;
             transition: all 0.3s;
@@ -125,16 +134,17 @@
         .feature-card h3 {
             color: var(--primary-color);
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .feature-card p {
-            line-height: 1.6;
+            line-height: 1.5;
             color: #bbb;
+            font-size: 0.95rem;
         }
 
         .changelog-section {
-            padding: 60px 20px;
+            padding: 40px 20px;
             max-width: 900px;
             margin: 0 auto;
             text-align: left;
@@ -144,42 +154,43 @@
             color: var(--accent-color);
             border-bottom: 1px solid #333;
             padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-size: 2rem;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
         }
 
         #changelog-items div {
             background-color: #151515;
-            margin-bottom: 15px;
-            padding: 15px 20px;
+            margin-bottom: 12px;
+            padding: 12px 18px;
             border-radius: 12px;
             border-left: 4px solid var(--primary-color);
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #ddd;
         }
 
         .version-badge {
             display: inline-block;
             background-color: #333;
-            padding: 5px 15px;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
             color: var(--accent-color);
         }
 
         footer {
-            padding: 40px 20px;
+            padding: 30px 20px;
             background-color: #000;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #555;
             border-top: 1px solid #111;
         }
 
         @media (max-width: 600px) {
-            .logo-img { max-width: 220px; }
-            .tagline { font-size: 1.1rem; }
-            .download-btn { width: 80%; padding: 15px 20px; }
+            .logo-img { max-width: 140px; }
+            .tagline { font-size: 1rem; }
+            .download-btn { width: 100%; padding: 12px 10px; }
+            .downloader-box { width: 100%; box-sizing: border-box; }
             .downloader-code { font-size: 1.5rem; }
         }
     </style>
@@ -192,15 +203,15 @@
         <div class="version-badge">Versión Estable 4.2.6</div>
         <p class="tagline">La plataforma de IPTV más robusta, optimizada para Smart TVs y dispositivos con 1GB de RAM. Disfruta sin límites.</p>
 
-        <div class="download-container">
+        <div class="download-flex-container">
             <a href="https://github.com/ThedarkSoldier996/updater/raw/refs/heads/main/novaplay.apk" class="download-btn">
                 DESCARGAR APK ESTABLE
             </a>
-        </div>
 
-        <div class="downloader-box">
-            <div class="downloader-title">Código para App Downloader</div>
-            <div class="downloader-code">6225435</div>
+            <div class="downloader-box">
+                <div class="downloader-title">App Downloader</div>
+                <div class="downloader-code">6225435</div>
+            </div>
         </div>
     </header>
 
@@ -227,7 +238,7 @@
     </div>
 
     <footer>
-        <p>Desarrollado con ❤️ por **ThedarkSoldier996**</p>
+        <p>Desarrollado con ❤️ por ThedarkSoldier996</p>
         <p>&copy; 2026 M.S.G.T SOLUTIONS TEAM</p>
     </footer>
 
