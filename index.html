@@ -24,21 +24,18 @@
         }
 
         header {
-            padding: 80px 20px;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://raw.githubusercontent.com/ThedarkSoldier996/novaplay/main/banner.jpg');
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://raw.githubusercontent.com/ThedarkSoldier996/novaplay/main/banner.jpg');
             background-size: cover;
             background-position: center;
-            border-bottom: 2px solid var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
         }
 
-        .logo {
-            font-size: 4rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 10px rgba(229, 9, 20, 0.5);
+        .logo-img {
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.4));
         }
 
         .tagline {
@@ -49,10 +46,11 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.4;
         }
 
         .download-container {
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .download-btn {
@@ -75,14 +73,28 @@
             background-color: #ff000d;
         }
 
-        .secondary-btn {
-            background-color: transparent;
-            border: 2px solid #fff;
+        .downloader-box {
+            display: inline-block;
+            background-color: #222;
+            border: 2px dashed var(--accent-color);
+            padding: 15px 30px;
+            border-radius: 15px;
+            margin: 20px auto;
         }
 
-        .secondary-btn:hover {
-            background-color: #fff;
-            color: #000;
+        .downloader-title {
+            font-size: 0.9rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        .downloader-code {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            font-family: monospace;
         }
 
         .features {
@@ -165,26 +177,30 @@
         }
 
         @media (max-width: 600px) {
-            .logo { font-size: 2.5rem; }
+            .logo-img { max-width: 220px; }
             .tagline { font-size: 1.1rem; }
             .download-btn { width: 80%; padding: 15px 20px; }
+            .downloader-code { font-size: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">NovaPlay</div>
+        <img src="https://raw.githubusercontent.com/ThedarkSoldier996/novaimg/main/novasplash.webp" alt="NovaPlay Logo" class="logo-img">
+        <br>
         <div class="version-badge">Versión Estable 4.2.6</div>
         <p class="tagline">La plataforma de IPTV más robusta, optimizada para Smart TVs y dispositivos con 1GB de RAM. Disfruta sin límites.</p>
 
         <div class="download-container">
             <a href="https://github.com/ThedarkSoldier996/updater/raw/refs/heads/main/novaplay.apk" class="download-btn">
-                DESCARGAR APK STABLE
+                DESCARGAR APK ESTABLE
             </a>
-            <a href="https://github.com/ThedarkSoldier996/novaplay/raw/refs/heads/main/novaservices.apk" class="download-btn secondary-btn">
-                NovaServices
-            </a>
+        </div>
+
+        <div class="downloader-box">
+            <div class="downloader-title">Código para App Downloader</div>
+            <div class="downloader-code">6225435</div>
         </div>
     </header>
 
