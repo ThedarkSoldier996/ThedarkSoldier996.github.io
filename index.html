@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaPlay</title>
-    <!-- ICONO DE LA PÁGINA -->
+    <title>NovaPlay - IPTV Premium</title>
     <link rel="icon" type="image/webp" href="https://raw.githubusercontent.com/ThedarkSoldier996/novaimg/main/novasplash.webp">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -34,7 +33,7 @@
         }
 
         .logo-img {
-            max-width: 180px; /* Tamaño reducido para dar espacio al texto */
+            max-width: 180px;
             height: auto;
             margin-bottom: 10px;
             filter: drop-shadow(0 0 15px rgba(229, 9, 20, 0.4));
@@ -200,7 +199,7 @@
     <header>
         <img src="https://raw.githubusercontent.com/ThedarkSoldier996/novaimg/main/novasplash.webp" alt="NovaPlay Logo" class="logo-img">
         <br>
-        <div class="version-badge">Versión Estable 4.2.6</div>
+        <div id="version-badge" class="version-badge">Cargando versión...</div>
         <p class="tagline">La plataforma de IPTV más robusta, optimizada para Smart TVs y dispositivos con 1GB de RAM. Disfruta sin límites.</p>
 
         <div class="download-flex-container">
@@ -231,7 +230,7 @@
     </section>
 
     <div class="changelog-section">
-        <h2>¿Qué hay de nuevo en la v4.2.6?</h2>
+        <h2 id="changelog-title">Novedades</h2>
         <div id="changelog-items">
             <!-- Cargando dinámicamente... -->
         </div>
@@ -246,7 +245,13 @@
         fetch("https://raw.githubusercontent.com/ThedarkSoldier996/updater/main/updatestable.json")
             .then(response => response.json())
             .then(data => {
+                // Actualizar versión en la cabecera
+                document.getElementById("version-badge").textContent = "Versión Estable " + data.version;
+                document.getElementById("changelog-title").textContent = "¿Qué hay de nuevo en la v" + data.version + "?";
+
+                // Cargar changelog
                 const container = document.getElementById("changelog-items");
+                container.innerHTML = ""; // Limpiar mensaje de carga
                 data.changelog.forEach(item => {
                     const div = document.createElement("div");
                     div.textContent = item;
@@ -255,6 +260,7 @@
             })
             .catch(err => {
                 console.error("Error cargando changelog:", err);
+                document.getElementById("version-badge").textContent = "NovaPlay IPTV";
                 const container = document.getElementById("changelog-items");
                 container.innerHTML = "<div>Error al cargar las novedades. Intenta refrescar la página.</div>";
             });
