@@ -28,4 +28,6 @@ Puedes ver la página en vivo aquí: [https://thedarksoldier996.github.io/](http
 *   **GitHub Pages**: Alojamiento gratuito y de alta disponibilidad.
 
 ---
-Desarrollado con ❤️ por **ThedarkSoldier996**
+Desarrollado con ❤️ por ThedarkSoldier996
+
+© 2010 - 2026 M.S.G.T SOLUTIONS. 
